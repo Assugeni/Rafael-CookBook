@@ -2,7 +2,7 @@
 
 Collection of Various kinds of recipes.
 This project is dedicated to users who are willing to learn cooking.
-It contains various kinds of recipes and user can upload their own recipies too.
+It contains various kinds of recipes and user can upload their own recipes too.
  
 ## UX
  
@@ -57,12 +57,12 @@ So that users can easily get/filter whatever they want out of thousand of recipe
 ### Testing
 
 1. Home Page: 
-  - It contains **The best Recipes** section to visit the most popular recipies.
-  - **All Receipes** section to view all kinds of recipies present in website uploaded by all users along with their name and emails.
+  - It contains **The best Recipes** section to visit the most popular recipes.
+  - **All Receipes** section to view all kinds of recipes present in website uploaded by all users along with their name and emails.
 
   If you **click on any recipe card** it will take you to the recipe detail page showing all details(steps to cook, ingredients, cooking time etc)  of that specific dish. 
 
-  If you click on button present at top named **My Recipes** will take you to the page which will show you filtered recipies uploaded by specific user.
+  If you click on button present at top named **My Recipes** will take you to the page which will show you filtered recipes uploaded by specific user.
 
 2. RecipeView: To View
 
@@ -74,9 +74,9 @@ So that users can easily get/filter whatever they want out of thousand of recipe
     - preparation time needed
     
 3. My Recipe Page:
-   **User needs to enter their name and email** to view all recipies uploaded by him.
+   **User needs to enter their name and email** to view all recipes uploaded by him.
    After entering email and name, click **show my recipes** button.
-   - It displays all recipies uploaded by you. If no recipe was uploaded by you it will show message "No Data Found".
+   - It displays all recipes uploaded by you. If no recipe was uploaded by you it will show message "No Data Found".
    - It displays **Add Recipe** button at top. You can add a new recipe on clicking that button.
    - There are three buttons with each recipe uploaded by you(View, Edit,Delete). 
    You can **View complete recipe details** by clicking on **View** button present below that recipe.
