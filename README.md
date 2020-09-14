@@ -2,7 +2,7 @@
 
 Collection of Various kinds of recipes.
 This project is dedicated to users who are willing to learn cooking.
-It contains various kinds of recipies and user can upload their own recipies too.
+It contains various kinds of recipes and user can upload their own recipies too.
  
 ## UX
  
@@ -13,12 +13,12 @@ It's built for two kind of users:
 1. One who wants learn Cooking (To be a chef)
 2. One who wants to teach Cooking (Wants to share their talent)
 
-Some Users will visit the site to learn new recipies whereas others visit to upload their recipies so that other users can learn and appreciate their talent.
+Some Users will visit the site to learn new recipes whereas others visit to upload their recipies so that other users can learn and appreciate their talent.
 
 ## Features
 
 - User can add new recipies using their name and email.
-- User can view all kind of recipies in website uploaded by him or other users
+- User can view all kind of recipes in website uploaded by him or other users
 - User can edit recipe uploaded by him
 - User can delete already added recipe uploaded by him
 - User can filter recipies uploaded by him only. 
@@ -30,7 +30,7 @@ We can implement various features to improve the site like:
 So that users can post a comment to clear their doubts or to appreciate the work.
 
 - Ratings
-So that users can rate the recipies to help others whether this recipe is good or bad.
+So that users can rate the recipes to help others whether this recipe is good or bad.
 
 - Categorize the Data 
 So that users can easily get/filter whatever they want out of thousand of recipes.
