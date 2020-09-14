@@ -109,6 +109,7 @@ Heroku is a cloud platform as a service supporting several programming languages
 - A bunch of supportive tools
 - Beginner and startup-friendly
 - It allows you to create a new server in just 10 seconds by using the interface of Heroku Command Line.
+- The deployed version is available here: https://rafael-cookbook.herokuapp.com/
 
 ## PLUS POINTS
 - Using Heroku Config Vars: 
