@@ -1,0 +1,105 @@
+{% extends "includes/base.html" %}
+
+  {% block title %}
+    <!-- Title -->
+    <title>CookBook | Recipe</title>
+    {% endblock %}
+
+    {% block custom_css %}
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    {% endblock %}
+{% block content %}
+
+    <div class="receipe-post-area section-padding-80">
+
+            <!-- Receipe Slider -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="receipe-slider owl-carousel">
+                            <img src="/static/img/1.jpg" alt="">
+                            <img src="/static/img/2.jpg" alt="">
+                            <img src="/static/img/3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% for recipy_obj in my_recipy %}
+
+            {% if recipy_obj.recipe_name == recipy_name %}
+                <!-- Receipe Content Area -->
+                <div class="receipe-content-area">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="receipe-headline my-5">
+                                    <span>{{recipy_obj.month}} {{recipy_obj.day}}, {{recipy_obj.year}}</span>
+                                    <span>By : {{name}}</span>
+                                    <h2>{{recipy_obj.recipe_name}}</h2>
+
+                                    <div class="receipe-duration">
+                                        <h6>Prep: {{recipy_obj.prep_time}} mins</h6>
+                                        <h6>Cook: {{recipy_obj.cook_time}} mins</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="stars">
+                                    <form action="">
+                                        <input class="star star-5" id="star-5-2" type="radio" name="star"/>
+                                        <label class="star star-5" for="star-5-2"></label>
+                                        <input class="star star-4" id="star-4-2" type="radio" name="star"/>
+                                        <label class="star star-4" for="star-4-2"></label>
+                                        <input class="star star-3" id="star-3-2" type="radio" name="star"/>
+                                        <label class="star star-3" for="star-3-2"></label>
+                                        <input class="star star-2" id="star-2-2" type="radio" name="star"/>
+                                        <label class="star star-2" for="star-2-2"></label>
+                                        <input class="star star-1" id="star-1-2" type="radio" name="star"/>
+                                        <label class="star star-1" for="star-1-2"></label>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-lg-8">
+                                {% for step in recipy_obj.steps %}
+                                <!-- Single Preparation Step -->
+                                <div class="single-preparation-step d-flex">
+                                    <h4>{{loop.index}}).</h4>
+                                    <p>{{step}}</p>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+
+                            <!-- Ingredients -->
+                            <div class="col-12 col-lg-4">
+                                <div class="ingredients">
+                                    <h4>Ingredients</h4>
+                                    <ul class="custom-control">
+                                        {% for ingredient in recipy_obj.ingredients %}
+                                            <li style="list-style: square;">{{ingredient}}</li>
+                                    {% endfor %}
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                 </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     {% block head %}
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+     {% block title %}
+    <!-- Title -->
+    <title>CookBook | Home</title>
+    {% endblock %}
+    <!-- Favicon -->
+    <link rel="icon" href="/static/img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    {% block custom_css %}
+    {% endblock %}
+     {% endblock %}
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="/static/img/salad.png" alt="">
+    </div>
+
+    <!-- Search Wrapper -->
+    <div class="search-wrapper">
+        <!-- Close Btn -->
+        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" method="post">
+                        <input type="search" name="search" placeholder="Type any keywords...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+         {% block header %}
+        <!-- Navbar Area -->
+        <div class="delicious-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="deliciousNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="/"><img src="/static/img/logo_footer.png" alt=""></a>
+
+
+                        {% block extra_heading %}
+                              <button class="btn delicious-btn btn-default btn-rounded mb-4" onclick="location.href='/my_recipies';">My Recipies</button>
+                        {% endblock %}
+
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </header>
+
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        {% block footer %}
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+
+                    <!-- Footer Logo -->
+                    <div class="footer-logo">
+<!--                        <a href="/"><img src="/static/img/logo_footer.png" alt=""></a>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         {% endblock %}
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+
+
+    <script src="/static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/static/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="/static/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="/static/js/active.js"></script>
+    {% block js %}
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+{% for recipy_obj in all_recipes %}
+            <!-- Single Blog Area -->
+            <div class="single-blog-area mb-80" id="blog__{{recipy_obj.recipe_name}}">
+                <!-- Thumbnail -->
+                <div class="blog-thumbnail">
+                    <img src="/static/img/r{{ range(1, 13) | random }}.jpg" alt="">
+                    <!-- Post Date -->
+                    <div class="post-date">
+                        <a href="#"><span>{{recipy_obj.day}}</span>{{recipy_obj.month}} <br>{{recipy_obj.year}} </a>
+                    </div>
+                </div>
+                <!-- Content -->
+                <div class="blog-content">
+                    <a href="#" class="post-title" id="recipe_title">{{recipy_obj.recipe_name}}</a>
+                    <div class="meta-data">by <a href="#">{{user}}</a> - <a href="#">:{{email}}</a>
+                    </div>
+                    <p>{{recipy_obj.descr}}</p>
+                    <!-- Extra Info Start -->
+                        <div class="extra_info {{recipy_obj.recipe_name}} d-none">
+                            <input type="text"  class="cook_time" name="cook_time" value="{{recipy_obj.cook_time}}">
+                            <input type="text"  class="prep_time" name="prep_time" value="{{recipy_obj.prep_time}}">
+                            <textarea rows="3" cols="25" class="descr" name="descr">{{recipy_obj.descr}}</textarea>
+                              <ol class="ingredients_list">
+                                  {% for ingredient in recipy_obj.ingredients %}
+                                        <li>{{ingredient}} <span class="close" >x</span></li>
+                                  {% endfor %}
+                              </ol>
+                              <ol class="step_list">
+                                  {% for step in recipy_obj.steps %}
+                                        <li>{{step}} <span class="close" >x</span></li>
+                                  {% endfor %}
+                              </ol>
+                        </div>
+                    <!--Extra Info ENd-->
+                    <button onclick="" class="btn delicious-btn mt-30 view_recipy" id="{{recipy_obj.recipe_name}}__view">View Recipe</button>
+                    <button onclick="" class="btn delicious-btn mt-30 edit_recipy" id="{{recipy_obj.recipe_name}}__edit">Edit Recipe</button>
+                    <button class="btn delicious-btn mt-30 delete_recipy" id="{{recipy_obj.recipe_name}}__del">Delete Recipe</button>
+                </div>
+            </div>
+
+    {% endfor %}
+
+

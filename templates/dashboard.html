@@ -1,0 +1,144 @@
+{% extends "includes/base.html" %}
+{% block title %}
+    <!-- Title -->
+    <title>CookBook | My Recipies</title>
+    {% endblock %}
+
+{% block extra_heading %}
+         <button type="submit" id="add_new_recipe" class="btn delicious-btn btn-default btn-rounded mb-4 d-none" data-toggle="modal" data-target="#modalRegisterForm">Add New Recipe</button>
+{% endblock %}
+
+
+{% block content %}
+
+
+    <p>{{recipies}}</p>
+    <!-- Receipe Post Search -->
+        <div class="receipe-post-search text-left">
+            <div class="container">
+                <input style="margin: 13px 0px;" placeholder="Enter Your Name" id="usr_name" onchange="clear_all()">
+                <input style="margin: 13px 0px;" type="email" placeholder="Your Email" id="usr_email" onchange="clear_all()">
+                <button style="padding: 1px 0px;" class="btn delicious-btn" onclick="show_my_recipies()">Show my Recipies</button>
+<!--                <h5 style="margin-top: 61px;font-size: xxx-large;color: #ba3755;">Your Recipies</h5>-->
+            </div>
+        </div>
+    <!-- ##### Blog Area Start ##### -->
+    <div class="blog-area section-padding-80">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="blog-posts-area" id="append_user_data">
+                            <!--Append data here-->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Area End ##### -->
+
+
+    <!-- ADD RECIPE FORM -->
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Add Recipe</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+              <form action="/add_data" method="post" id="new_recipe_form">
+
+                 <label for="recipe_name">Recipe Name</label>
+                 <input type="text" name="recipe_name" id="recipe_name">
+
+                 <label for="cook_time">Cook Time</label>
+                 <input type="text"  id="cook_time" name="cook_time">
+
+                  <label for="prep_time">Prep Time</label>
+                  <input type="text"  id="prep_time" name="prep_time">
+
+                  <label for="descr">Description</label>
+                  <textarea rows="3" cols="25" id="descr" name="descr"></textarea>
+
+
+                  <label for="ingred">ingredients</label>
+                  <input type="text" id="ingred" placeholder="Enter Ingredients here">
+                  <div  class="btn btn-primary" onclick="addIngredient()">Add Ingredient</div>
+                  <ol id="ingredients_list" name="ingredient_list">
+                  </ol>
+
+                  <label for="steps">Steps</label>
+                  <input type="text" id="steps" placeholder="Enter Steps here">
+                  <div  class="btn btn-primary" onclick="addStep()">Add Step</div>
+                  <ol id="step_list" name="step_list">
+                  </ol>
+              </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button onclick="submit_form()" class="btn delicious-btn">Add My Recipe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ADD Recipe FORM END-->
+
+
+    <!-- ADD RECIPE FORM -->
+    <div class="modal fade" id="modalEditRecipy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Edit Recipe</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+              <form action="/add_data" method="post" id="update_recipe_form">
+                 <input type="text" name="recipe_name" id="prev_recipe_name" class="d-none">
+                 <label for="recipe_name">Recipe Name</label>
+                 <input type="text" name="recipe_name" id="edit_recipe_name">
+
+                 <label for="cook_time">Cook Time</label>
+                 <input type="text"  id="edit_cook_time" name="cook_time">
+
+                  <label for="prep_time">Prep Time</label>
+                  <input type="text"  id="edit_prep_time" name="prep_time">
+
+                  <label for="descr">Description</label>
+                  <textarea rows="3" cols="25" id="edit_descr" name="descr"></textarea>
+
+
+                  <label for="ingred">ingredients</label>
+                  <input type="text" id="edit_ingred" placeholder="Enter Ingredients here">
+                  <div  class="btn btn-primary" onclick="addEditIngredient()">Add Ingredient</div>
+                  <ol id="edit_ingredients_list" name="ingredient_list">
+                  </ol>
+
+                  <label for="steps">Steps</label>
+                  <input type="text" id="edit_steps" placeholder="Enter Steps here">
+                  <div  class="btn btn-primary" onclick="addEditStep()">Add Step</div>
+                  <ol id="edit_step_list" name="step_list">
+                  </ol>
+              </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button onclick="edit_submit_form()" class="btn delicious-btn">Update Recipe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ADD Recipe FORM END-->
+{% endblock %}
+
+{% block js %}
+<script src="/static/js/custom_script.js"></script>
+  {% endblock %}
+
