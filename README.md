@@ -126,7 +126,7 @@ Staging, for running a new build of the app in a production-like setting before 
 ### RUN LOCALLY
 
 1. clone the project using command :
-      git clone https://github.com/Assugeni/CookBook.git
+      git clone https://github.com/Assugeni/Rafael-CookBook
       
 2. create and activate virtualenv in project directory using commands:
 
