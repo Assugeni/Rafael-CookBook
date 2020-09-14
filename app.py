@@ -149,7 +149,7 @@ def view_recipe():
 def get_my_recipies():
     """
     To get all data of a specific user from db
-    pass it to all recipies template
+    pass it to all recipes template
     GET : user_id
     return all recipy template containing recipies of that specific user
     """
