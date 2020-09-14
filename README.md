@@ -1,4 +1,4 @@
-# Rafael CookBook
+# Rafael CookBook - Milestone Project 
 
 Collection of Various kinds of recipes.
 This project is dedicated to users who are willing to learn cooking.
